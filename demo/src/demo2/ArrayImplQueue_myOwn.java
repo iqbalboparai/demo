@@ -30,7 +30,7 @@ public class ArrayImplQueue_myOwn {
 			input = scan.nextInt();
 			switch(input){
 			case 1:
-				obj.enqueue(i);
+				//obj.enqueue(i);
 			}
 		}while (input != 0);
 	}
