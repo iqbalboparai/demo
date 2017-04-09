@@ -12,6 +12,34 @@ public class NumOfLinesInFile {
 		try{
 		FileInputStream fs= new FileInputStream("src/FileBali.txt");
 		in= new Scanner(fs);
+		//checkNumLines(in);
+		checkNumLines2(in);
+		
+		}catch(FileNotFoundException e){
+			System.out.println(e.getMessage());
+		}
+		finally{
+			in.close();
+		}
+
+	}
+
+	private static void checkNumLines2(Scanner in) {
+		int flag = 0;
+		StringBuilder sb = new StringBuilder("");
+		while(in.hasNext())		
+			sb.append(in.nextLine());
+			sb.append(' ');
+			
+			
+		
+		String[] str = sb.toString().split(". ");
+		flag = str.length;
+		System.out.println("Total lines:" + flag);
+	}
+
+	private static void checkNumLines(Scanner in) {
+		
 		int flag = 0;
 		while(in.hasNext()){
 			if(in.nextLine()!=null){
@@ -21,14 +49,6 @@ public class NumOfLinesInFile {
 		
 		System.out.println("Total lines:" + flag);
 		
-		}catch(FileNotFoundException e){
-			System.out.println(e.getMessage());
-		}
-		finally{
-			//fs.close();
-			in.close();
-		}
-
 	}
 
 }
